@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbonCalc - Calculate Your Carbon Footprint</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://png.pngtree.com/png-vector/20250129/ourlarge/pngtree-green-globe-with-leaves-representing-eco-friendly-living-png-image_15366508.png"> <!-- Optional: Add a favicon -->
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">CarbonCalc</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#learn-more" class="btn btn-secondary">Learn More</a>
+                <a href="form.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Calculate Your Carbon Footprint</h1>
+                <p>Understand your environmental impact and discover ways to reduce your carbon emissions.</p>
+                <a href="form.html" class="btn btn-primary btn-large">Start Calculating Now</a>
+            </div>
+        </section>
+
+        <section id="about" class="container content-section">
+             <h2>About CarbonCalc</h2>
+             <p>CarbonCalc helps individuals understand their personal contribution to climate change by estimating their carbon footprint based on lifestyle choices like travel, home energy use, and diet. Our goal is to provide actionable insights and encourage sustainable habits.</p>
+        </section>
+
+         <section id="resources" class="container content-section">
+             <h2>Resources</h2>
+             <p>Learn more about carbon footprints, climate change, and reduction strategies. (Links and content would go here).</p>
+             <ul>
+                 <li>Resource Link 1</li>
+                 <li>Resource Link 2</li>
+             </ul>
+        </section>
+
+        <!-- Add more sections as needed -->
+
+        <!-- chat Bot  -->
+        <!-- 🌿 Floating Chat Button and Chatbox -->
+<div id="chatToggle" class="chat-toggle">💬</div>
+
+<div id="floatingChat" class="floating-chat hidden">
+  <div class="chat-header">EcoBot 🌎 <span id="closeChat" class="close-chat">×</span></div>
+  <div id="landingChatWindow" class="chat-window"></div>
+  <div id="sampleQuestions" class="sample-questions">
+      <p><strong>Try asking:</strong></p>
+      <button class="sample-btn">What is a carbon footprint?</button>
+      <button class="sample-btn">How can I reduce food waste?</button>
+      <button class="sample-btn">Is vegetarian diet better for the environment?</button>
+  </div>
+  <div class="chat-input">
+      
+    <input type="text" id="landingUserInput" placeholder="Ask about climate or carbon..." />
+    <button id="landingSendBtn">Send</button>
+  </div>
+</div>
+
+          
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>CarbonCalc</h3>
+                    <p>Helping individuals and businesses understand and reduce their carbon footprint through accurate calculations and actionable insights.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Carbon Reduction Tips</a></li>
+                        <li><a href="#">Methodology</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-subscribe">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for the latest updates on carbon reduction strategies.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2024 CarbonCalc. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="landing.js"></script>
+</body>
+</html>

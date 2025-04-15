@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator - Input</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+         <nav class="container">
+            <a href="index.html" class="logo">CarbonCalc</a>
+             <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+            </ul>
+             <div class="nav-buttons">
+                 <a href="#learn-more" class="btn btn-secondary">Learn More</a>
+                 <a href="form.html" class="btn btn-primary active">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="calculator-container card">
+            <h2>Calculate Your Carbon Footprint</h2>
+            <p>Calculate your carbon emissions from transportation, home energy, and food consumption.</p>
+
+            <form id="carbonForm">
+                <div class="tabs">
+                    <button type="button" class="tab-button active" data-tab="transport-tab">Transport</button>
+                    <button type="button" class="tab-button" data-tab="home-tab">Home</button>
+                    <button type="button" class="tab-button" data-tab="food-tab">Food</button>
+                </div>
+
+                <!-- Transport Tab -->
+                <div class="tab-content active" id="transport-tab">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="carTravel"> <img src="./icons/car.svg" alt="" class="icon"> Car Travel (km/week)</label>
+                            <input type="number" id="carTravel" name="carTravel" min="0" step="any" placeholder="e.g., 50">
+                        </div>
+                        <div class="form-group">
+                            <label for="carType"> <img src="./icons/fuel.svg" alt="" class="icon"> Car Type</label>
+                            <select id="carType" name="carType">
+                                <option value="petrol">Petrol</option>
+                                <option value="diesel">Diesel</option>
+                                <option value="hybrid">Hybrid</option>
+                                <option value="electric">Electric (Grid)</option>
+                                <option value="none">No Car</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="flightHours"> <img src="./icons/plane.svg" alt="" class="icon"> Flight Hours (per year)</label>
+                            <input type="number" id="flightHours" name="flightHours" min="0" step="any" placeholder="e.g., 10">
+                        </div>
+                        <div class="form-group">
+                            <label for="publicTransport"> <img src="./icons/bus.svg" alt="" class="icon"> Public Transport (km/week)</label>
+                            <input type="number" id="publicTransport" name="publicTransport" min="0" step="any" placeholder="e.g., 20">
+                        </div>
+                    </div>
+                     <button type="button" class="btn btn-primary" onclick="showTab('home-tab')">Next: Home Energy</button>
+                 </div>
+
+                <!-- Home Energy Tab -->
+                <div class="tab-content" id="home-tab">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="electricityUsage"> <img src="./icons/electricity.svg" alt="" class="icon"> Electricity Usage (kWh/month)</label>
+                            <input type="number" id="electricityUsage" name="electricityUsage" min="0" step="any" placeholder="e.g., 300">
+                        </div>
+                         <div class="form-group">
+                             <label for="heatingFuel"> <img src="./icons/fire.svg" alt="" class="icon"> Primary Heating Fuel</label>
+                             <select id="heatingFuel" name="heatingFuel">
+                                 <option value="natural_gas">Natural Gas</option>
+                                 <option value="heating_oil">Heating Oil</option>
+                                 <option value="lpg">LPG</option>
+                                 <option value="electric_heat">Electric Heating</option>
+                                 <option value="none">No Central Heating</option>
+                             </select>
+                        </div>
+                         <div class="form-group">
+                            <label for="heatingUsage"> <img src="./icons/gauge.svg" alt="" class="icon"> Heating Fuel Usage (Units/Month)</label>
+                             <input type="number" id="heatingUsage" name="heatingUsage" min="0" step="any" placeholder="e.g., 50 (check units)">
+                             <small>Units depend on fuel (e.g., Therms, Litres, kWh)</small>
+                        </div>
+                         <div class="form-group">
+                            <label for="householdSize"> <img src="./icons/users.svg" alt="" class="icon"> Household Size (people)</label>
+                            <input type="number" id="householdSize" name="householdSize" min="1" step="1" value="1" placeholder="e.g., 2">
+                        </div>
+                    </div>
+                     <button type="button" class="btn btn-secondary" onclick="showTab('transport-tab')">Back: Transport</button>
+                     <button type="button" class="btn btn-primary" onclick="showTab('food-tab')">Next: Food</button>
+                </div>
+
+                <!-- Food Tab -->
+                <div class="tab-content" id="food-tab">
+                    <div class="form-group">
+                        <label for="dietType"> <img src="./icons/food.svg" alt="" class="icon"> Primary Diet Type</label>
+                        <select id="dietType" name="dietType">
+                            <option value="high_meat">High Meat (Daily Red Meat)</option>
+                            <option value="medium_meat">Medium Meat (Few times/week)</option>
+                            <option value="low_meat">Low Meat (Rarely)</option>
+                            <option value="pescatarian">Pescatarian</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="foodWaste"> <img src="./icons/recycle.svg" alt="" class="icon"> How much food do you waste?</label>
+                         <select id="foodWaste" name="foodWaste">
+                             <option value="low">Very Little</option>
+                             <option value="medium">Some (Average)</option>
+                             <option value="high">Quite a Lot</option>
+                        </select>
+                    </div>
+                     <button type="button" class="btn btn-secondary" onclick="showTab('home-tab')">Back: Home Energy</button>
+                     <button type="submit" class="btn btn-primary btn-calculate">Calculate Total Emissions</button>
+                 </div>
+
+            </form>
+        </div>
+    </main>
+
+    <footer>
+       <!-- Identical Footer as index.html -->
+        <div class="container">
+             <div class="footer-content">
+                <div class="footer-about"><h3>CarbonCalc</h3><p>...</p></div>
+                <div class="footer-links"><h4>Quick Links</h4><ul>...</ul></div>
+                <div class="footer-subscribe"><h4>Stay Updated</h4><form>...</form></div>
+            </div>
+            <div class="copyright">© 2024 CarbonCalc. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Include Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
