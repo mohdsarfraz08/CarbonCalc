@@ -313,7 +313,7 @@ Avoid complex language. Tips should be realistic and simple.
     tipsListEl.innerHTML = `<li>Loading AI suggestions...</li>`;
 
     try {
-        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCxKwC9vNh5oueVIBGjgBvlJ2TTLisx4bo`, {
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=Your_APi_key`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -482,7 +482,7 @@ Avoid technical jargon. Be clear and simple.
     }
 
     try {
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCxKwC9vNh5oueVIBGjgBvlJ2TTLisx4bo`, {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=YOUR_API_KEY`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
