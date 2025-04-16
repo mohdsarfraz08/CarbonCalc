@@ -39,7 +39,7 @@ Give a clear, short, beginner-friendly answer about carbon footprint or the clim
     `;
 
     try {
-      const res = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCxKwC9vNh5oueVIBGjgBvlJ2TTLisx4bo', {
+      const res = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=YOUR_API', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
