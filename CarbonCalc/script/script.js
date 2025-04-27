@@ -358,7 +358,7 @@ BEHAVIORS TO AVOID:
 
     try {
         const API_KEY = "YOUR_API_KEY"; // Replace with your actual API key
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCxKwC9vNh5oueVIBGjgBvlJ2TTLisx4bo`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=YOUR_API_KEY_HERE`, {
            
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -603,7 +603,7 @@ User Question: "${question}"
              return;
         }
 
-        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCxKwC9vNh5oueVIBGjgBvlJ2TTLisx4bo`, { // Using 1.5 Flash
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=API_KEY_HERE`, { // Using 1.5 Flash
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -726,18 +726,6 @@ function removeWelcomeMessage() {
 // Call on page load
 document.addEventListener('DOMContentLoaded', showWelcomeMessage);
 
-
-// --- Add simple icons (Example using CSS classes) ---
-// You would typically add CSS rules for these classes, potentially using background images or font icons
-// e.g., in your CSS:
-// .icon-transport::before { content: '🚗'; margin-right: 5px; } /* Or use background-image */
-// .icon-home::before { content: '🏠'; margin-right: 5px; }
-// .icon-food::before { content: '🍎'; margin-right: 5px; }
-
-// Example of potentially adding classes (do this where results are displayed if needed)
-// if (transportResultEl) transportResultEl.classList.add('icon-transport');
-// if (homeResultEl) homeResultEl.classList.add('icon-home');
-// if (foodResultEl) foodResultEl.classList.add('icon-food');
 
 // Placeholder for any other initialization logic needed
 console.log("Carbon Footprint Calculator script loaded.");
