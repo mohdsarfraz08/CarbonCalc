@@ -77,7 +77,7 @@ git clone https://github.com/your-username/CarbonCalc.git
 |--------------|----------------|--------------|-------------|
 | ![Landing](screenshots/landing.png) | ![Form](screenshots/form.png) | ![Results](screenshots/results.png) | ![Chatbot](screenshots/chatbot.png) |
 
-> *(Replace with your real screenshots in a `/screenshots` folder)*
+
 
 ---
 
