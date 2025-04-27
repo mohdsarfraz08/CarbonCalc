@@ -593,8 +593,8 @@ User Question: "${question}"
 
     try {
          // --- IMPORTANT: Replace "your_APi" with your actual Gemini API Key ---
-        const API_KEY = "AIzaSyCxKwC9vNh5oueVIBGjgBvlJ2TTLisx4bo";
-        if (API_KEY === "your_APi") {
+        const API_KEY = "YOUR_API_KEY_HERE";
+        if (API_KEY === "YOUR_API_KEY") {
              updateChatMessage(thinkingId, 'EcoBot', 'API Key not configured for chatbot.');
              console.warn("Gemini API Key not set for chatbot!");
              userInput.disabled = false;
