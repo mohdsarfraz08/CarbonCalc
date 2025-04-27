@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator - Input</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/form-styles.css">
+    <link rel="icon" href="https://png.pngtree.com/png-vector/20250129/ourlarge/pngtree-green-globe-with-leaves-representing-eco-friendly-living-png-image_15366508.png">
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                CarbonCalc
+            </a>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#learn-more" class="btn btn-secondary">Learn More</a>
+                <a href="form.html" class="btn btn-primary active">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="calculator-container card">
+            <h2>Calculate Your Carbon Footprint</h2>
+            <p>Calculate your carbon emissions from transportation, home energy, and food consumption to understand your environmental impact.</p>
+
+            <!-- Progress Indicator -->
+            <div class="progress-indicator">
+                <div class="progress-step active" data-step="1">1</div>
+                <div class="progress-step" data-step="2">2</div>
+                <div class="progress-step" data-step="3">3</div>
+            </div>
+
+            <form id="carbonForm">
+                <div class="tabs">
+                    <button type="button" class="tab-button active" data-tab="transport-tab">
+                        <i class="fa-solid fa-car-side"></i> Transport
+                    </button>
+                    <button type="button" class="tab-button" data-tab="home-tab">
+                        <i class="fa-solid fa-house"></i> Home
+                    </button>
+                    <button type="button" class="tab-button" data-tab="food-tab">
+                        <i class="fa-solid fa-utensils"></i> Food
+                    </button>
+                </div>
+
+                <!-- Transport Tab -->
+                <div class="tab-content active" id="transport-tab">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="carTravel">
+                                <i class="fa-solid fa-car icon"></i> Personal Vehicle (km/week)
+                            </label>
+                            <input type="number" id="carTravel" name="carTravel" min="0" step="any" placeholder="e.g., 50">
+                        </div>
+                        <div class="form-group">
+                            <label for="carType">
+                                <i class="fa-solid fa-gas-pump icon"></i> Vehicle Type
+                            </label>
+                            <select id="carType" name="carType">
+                                <option value="petrol">Petrol Car</option>
+                                <option value="diesel">Diesel Car</option>
+                                <option value="hybrid">Hybrid Car</option>
+                                <option value="electric">Electric Car</option>
+                                <option value="petrol">Petrol Bike</option>
+                                <option value="electric">Electric Bike</option>
+                                <option value="none">Bicycle</option>
+                                <option value="none">No Vehicle</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="flightHours">
+                                <i class="fa-solid fa-plane icon"></i> Flight Hours (per year)
+                            </label>
+                            <input type="number" id="flightHours" name="flightHours" min="0" step="any" placeholder="e.g., 10">
+                        </div>
+                        <div class="form-group">
+                            <label for="publicTransport">
+                                <i class="fa-solid fa-bus icon"></i> Public Transport (km/week)
+                            </label>
+                            <input type="number" id="publicTransport" name="publicTransport" min="0" step="any" placeholder="e.g., 20">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="showTab('home-tab'); updateProgress(2);">
+                        Next: Home Energy <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Home Energy Tab -->
+                <div class="tab-content" id="home-tab">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="electricityUsage">
+                                <i class="fa-solid fa-lightbulb icon"></i> Electricity Usage (kWh/month)
+                            </label>
+                            <input type="number" id="electricityUsage" name="electricityUsage" min="0" step="any" placeholder="e.g., 300">
+                        </div>
+                        <div class="form-group">
+                            <label for="heatingFuel">
+                                <i class="fa-solid fa-fire icon"></i> Primary Heating Fuel
+                            </label>
+                            <select id="heatingFuel" name="heatingFuel">
+                                <option value="natural_gas">Natural Gas</option>
+                                <option value="heating_oil">Heating Oil</option>
+                                <option value="lpg">LPG</option>
+                                <option value="electric_heat">Electric Heating</option>
+                                <option value="none">No Central Heating</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="heatingUsage">
+                                <i class="fa-solid fa-temperature-high icon"></i> Heating Fuel Usage (Units/Month)
+                            </label>
+                            <input type="number" id="heatingUsage" name="heatingUsage" min="0" step="any" placeholder="e.g., 50 (check units)">
+                            <small>Units depend on fuel (e.g., Therms, Litres, kWh)</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="householdSize">
+                                <i class="fa-solid fa-users icon"></i> Household Size (people)
+                            </label>
+                            <input type="number" id="householdSize" name="householdSize" min="1" step="1" value="1" placeholder="e.g., 2">
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <button type="button" class="btn btn-secondary" onclick="showTab('transport-tab'); updateProgress(1);">
+                            <i class="fa-solid fa-arrow-left"></i> Back: Transport
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="showTab('food-tab'); updateProgress(3);">
+                            Next: Food <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Tab -->
+                <div class="tab-content" id="food-tab">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="dietType">
+                                <i class="fa-solid fa-utensils icon"></i> Primary Diet Type
+                            </label>
+                            <select id="dietType" name="dietType">
+                                <option value="high_meat">High Meat (Daily Red Meat)</option>
+                                <option value="medium_meat">Medium Meat (Few times/week)</option>
+                                <option value="low_meat">Low Meat (Rarely)</option>
+                                <option value="pescatarian">Pescatarian</option>
+                                <option value="vegetarian">Vegetarian</option>
+                                <option value="vegan">Vegan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="foodWaste">
+                                <i class="fa-solid fa-trash icon"></i> How much food do you waste?
+                            </label>
+                            <select id="foodWaste" name="foodWaste">
+                                <option value="low">Very Little</option>
+                                <option value="medium">Some (Average)</option>
+                                <option value="high">Quite a Lot</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <button type="button" class="btn btn-secondary" onclick="showTab('home-tab'); updateProgress(2);">
+                            <i class="fa-solid fa-arrow-left"></i> Back: Home Energy
+                        </button>
+                        <button type="submit" class="btn btn-primary btn-calculate">
+                            <i class="fa-solid fa-calculator"></i> Calculate Total Emissions
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>
+                        <i class="fa-solid fa-leaf"></i>
+                        CarbonCalc
+                    </h3>
+                    <p>Helping individuals and businesses understand and reduce their carbon footprint through accurate calculations and actionable insights.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="#">Carbon Reduction Tips</a></li>
+                        <li><a href="#">Methodology</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-subscribe">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for the latest updates on carbon reduction strategies.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2024 CarbonCalc. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script/script.js"></script>
+    <script>
+        // Update progress indicator
+        function updateProgress(step) {
+            const steps = document.querySelectorAll('.progress-step');
+            steps.forEach(s => {
+                const stepNum = parseInt(s.getAttribute('data-step'));
+                s.classList.remove('active', 'completed');
+                if (stepNum === step) {
+                    s.classList.add('active');
+                } else if (stepNum < step) {
+                    s.classList.add('completed');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

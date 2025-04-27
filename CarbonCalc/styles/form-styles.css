@@ -1,0 +1,296 @@
+/* Form-specific styles to complement the main style.css */
+
+/* Calculator Container */
+.calculator-container {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    margin: 3rem auto;
+    max-width: 800px;
+  }
+  
+  .calculator-container h2 {
+    color: var(--text-dark);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  
+  .calculator-container p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+  }
+  
+  /* Tabs Navigation */
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid var(--gray-200);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
+  .tab-button {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--text-light);
+    cursor: pointer;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  
+  .tab-button:hover {
+    color: var(--primary);
+  }
+  
+  .tab-button.active {
+    border-bottom-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  /* Tab Content */
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Form Grid */
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Form Groups */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: flex;
+    align-items: center;
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    color: var(--primary);
+  }
+  
+  .form-group input,
+  .form-group select {
+    background-color: var(--white);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+    color: var(--text-dark);
+    font-size: 1rem;
+    padding: 0.75rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.1);
+    outline: none;
+  }
+  
+  .form-group input::placeholder {
+    color: var(--gray-300);
+  }
+  
+  .form-group small {
+    color: var(--text-light);
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+  }
+  
+  /* Form Navigation Buttons */
+  .btn-calculate {
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .btn-calculate:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  /* Form Card */
+  .card {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  
+  /* Active Navigation Item */
+  .nav-buttons .active {
+    background-color: var(--primary-dark);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .calculator-container {
+      padding: 1.5rem;
+      margin: 2rem 1rem;
+    }
+  
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .tabs {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+  
+    .tab-button {
+      padding: 0.75rem 1rem;
+    }
+  }
+  
+  /* Icon Fallbacks */
+  .icon {
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+  
+  /* Progress Indicator */
+  .progress-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .progress-indicator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--gray-200);
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+  
+  .progress-step {
+    background-color: var(--white);
+    border: 2px solid var(--gray-300);
+    border-radius: 50%;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    height: 2.5rem;
+    width: 2.5rem;
+    position: relative;
+    z-index: 1;
+    transition: all 0.2s ease;
+  }
+  
+  .progress-step.active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+  }
+  
+  .progress-step.completed {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+    color: var(--white);
+  }
+  
+  /* Results Section */
+  .results-container {
+    background-color: var(--primary-bg);
+    border-radius: var(--radius);
+    margin-top: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .results-container h3 {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .carbon-total {
+    color: var(--primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+  
+  .carbon-unit {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  
+  .carbon-comparison {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    margin: 1.5rem auto;
+    max-width: 500px;
+    padding: 1rem;
+  }
+  
+  .chart-container {
+    height: 300px;
+    margin: 2rem auto;
+    max-width: 600px;
+  }
+  
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .action-buttons .btn {
+    min-width: 200px;
+  }
+  

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Carbon Footprint Results</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/results-styles.css">
+    <link rel="icon" href="https://png.pngtree.com/png-vector/20250129/ourlarge/pngtree-green-globe-with-leaves-representing-eco-friendly-living-png-image_15366508.png">
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                CarbonCalc
+            </a>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#learn-more" class="btn btn-secondary">Learn More</a>
+                <a href="form.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="results-container card">
+            <h2>Your Carbon Footprint Results</h2>
+
+            <div class="results-summary">
+                <div class="chart-area animate-in">
+                    <canvas id="footprintChart"></canvas>
+                    <div class="chart-center-text">
+                        <span id="totalFootprintValue">0.00</span>
+                        <small>kg CO₂e / year</small>
+                    </div>
+                </div>
+                <div class="breakdown animate-in delay-1">
+                    <h3>Emission Breakdown</h3>
+                    <div class="category-item">
+                        <span class="legend-dot transport"></span>
+                        <span>Transport</span>
+                        <span class="category-value" id="transportResult">0.00 kg CO₂e</span>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar transport" id="transportBar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span class="legend-dot home"></span>
+                        <span>Home Energy</span>
+                        <span class="category-value" id="homeResult">0.00 kg CO₂e</span>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar home" id="homeBar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span class="legend-dot food"></span>
+                        <span>Food</span>
+                        <span class="category-value" id="foodResult">0.00 kg CO₂e</span>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar food" id="foodBar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="category-item total">
+                        <span>Total Emissions</span>
+                        <span class="category-value" id="totalResult">0.00 kg CO₂e / year</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison animate-in delay-2">
+                <i class="fa-solid fa-leaf icon"></i>
+                <p id="comparisonText">Calculating comparison...</p>
+            </div>
+
+            <!-- Additional Charts Section -->
+            <div class="additional-charts animate-in delay-3">
+                <h3>Detailed Analysis</h3>
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h4>Monthly Comparison</h4>
+                        <div class="chart-container">
+                            <canvas id="monthlyComparisonChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h4>Emission Trend</h4>
+                        <div class="chart-container">
+                            <canvas id="monthlyTrendChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h4>Global Comparison</h4>
+                        <div class="chart-container">
+                            <canvas id="globalComparisonChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h4>Emission Sources</h4>
+                        <div class="chart-container">
+                            <canvas id="emissionSourcesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-tips animate-in delay-4">
+                <div class="positive-tips">
+                    <h3><i class="fa-solid fa-lightbulb icon"></i> Recommended Actions</h3>
+                    <ul id="tipsList">
+                        <li>Loading recommendations...</li>
+                    </ul>
+                </div>
+                
+                <div class="negative-tips">
+                    <h3><i class="fa-solid fa-ban icon"></i> What to Avoid</h3>
+                    <ul id="negativeTipsList">
+                        <li>Loading warnings...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bonus: Streak/Goal Tracker -->
+            <div class="bonus-tracker animate-in delay-4">
+                <h3><i class="fa-solid fa-chart-line icon"></i> Goal Tracker</h3>
+                <p>Keep tracking daily to build a streak! Current Streak: <span id="streakCount">0</span> days.</p>
+                <button class="btn btn-secondary" onclick="alert('Goal setting feature coming soon!')">Set a Goal</button>
+            </div>
+
+            <div class="results-actions">
+                <a href="form.html" class="btn btn-secondary">
+                    <i class="fa-solid fa-calculator"></i> Recalculate
+                </a>
+                <button class="btn btn-primary" onclick="window.print()">
+                    <i class="fa-solid fa-download"></i> Download Report
+                </button>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fa-solid fa-share-nodes"></i> Share Results
+                </a>
+            </div>
+        </div>
+
+        <div class="ai-chat card animate-in">
+            <h3><i class="fa-solid fa-robot"></i> Ask EcoBot</h3>
+            <div id="chatWindow" class="chat-window">
+                <!-- Chat messages will be added here by JavaScript -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userQuestion" placeholder="Ask something about your carbon footprint..." />
+                <button id="sendBtn" class="btn btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>
+                        <i class="fa-solid fa-leaf"></i>
+                        CarbonCalc
+                    </h3>
+                    <p>Helping individuals and businesses understand and reduce their carbon footprint through accurate calculations and actionable insights.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="#">Carbon Reduction Tips</a></li>
+                        <li><a href="#">Methodology</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-subscribe">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for the latest updates on carbon reduction strategies.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2024 CarbonCalc. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script/results.js"></script>
+    <script src="script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+/* Results Page Specific Styles */
+
+.results-container {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    margin: 3rem auto;
+    max-width: 900px;
+  }
+  
+  .results-container h2 {
+    color: var(--text-dark);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  /* Results Summary Section */
+  .results-summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .results-summary {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  /* Chart Area */
+  .chart-area {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .chart-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .chart-center-text span {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+  }
+  
+  .chart-center-text small {
+    font-size: 0.875rem;
+    color: var(--text-light);
+  }
+  
+  /* Breakdown Section */
+  .breakdown {
+    background-color: var(--primary-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  
+  .breakdown h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--text-dark);
+  }
+  
+  .category-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .category-item .progress-bar-bg {
+    grid-column: 1 / -1;
+    height: 0.5rem;
+    background-color: var(--gray-200);
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  
+  .category-item .progress-bar {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 1s ease-in-out;
+  }
+  
+  .category-item .progress-bar.transport {
+    background-color: var(--transport-color, #22c55e);
+  }
+  
+  .category-item .progress-bar.home {
+    background-color: var(--home-color, #60a5fa);
+  }
+  
+  .category-item .progress-bar.food {
+    background-color: var(--food-color, #f59e0b);
+  }
+  
+  .category-item.total {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .legend-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .legend-dot.transport {
+    background-color: var(--transport-color, #22c55e);
+  }
+  
+  .legend-dot.home {
+    background-color: var(--home-color, #60a5fa);
+  }
+  
+  .legend-dot.food {
+    background-color: var(--food-color, #f59e0b);
+  }
+  
+  .category-value {
+    font-weight: 500;
+    text-align: right;
+  }
+  
+  /* Comparison Section */
+  .comparison {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .comparison .icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--primary);
+  }
+  
+  .comparison p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* AI Tips Section */
+  .ai-tips {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .ai-tips {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .positive-tips,
+  .negative-tips {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  
+  .positive-tips {
+    border-left: 4px solid var(--primary);
+  }
+  
+  .negative-tips {
+    border-left: 4px solid #ef4444;
+  }
+  
+  .ai-tips h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+  }
+  
+  .ai-tips h3 .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+  }
+  
+  .ai-tips ul {
+    padding-left: 1.5rem;
+    margin: 0;
+  }
+  
+  .ai-tips li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  
+  .ai-tips li:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Bonus Tracker */
+  .bonus-tracker {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .bonus-tracker h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+  }
+  
+  .bonus-tracker h3 .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+  }
+  
+  .bonus-tracker p {
+    margin-bottom: 1rem;
+  }
+  
+  #streakCount {
+    font-weight: 600;
+    color: var(--primary);
+  }
+  
+  /* Results Actions */
+  .results-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .results-actions .btn {
+    min-width: 200px;
+  }
+  
+  /* AI Chat */
+  .ai-chat {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    margin: 2rem auto 3rem;
+    max-width: 900px;
+  }
+  
+  .ai-chat h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+  }
+  
+  .chat-window {
+    height: 250px;
+    overflow-y: auto;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--gray-50, #f9fafb);
+  }
+  
+  .chat-message {
+    margin-bottom: 1rem;
+    max-width: 80%;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    line-height: 1.5;
+  }
+  
+  .bot-message {
+    background-color: var(--gray-100);
+    color: var(--text-dark);
+    border-bottom-left-radius: 0.25rem;
+  }
+  
+  .user-message {
+    background-color: var(--primary);
+    color: var(--white);
+    margin-left: auto;
+    border-bottom-right-radius: 0.25rem;
+  }
+  
+  .chat-input {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+  }
+  
+  .chat-input input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.1);
+  }
+  
+  /* Additional Charts */
+  .additional-charts {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .additional-charts h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--text-dark);
+  }
+  
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .charts-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .chart-card {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .chart-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    text-align: center;
+  }
+  
+  .chart-container {
+    height: 250px;
+    position: relative;
+  }
+  
+  /* Animation for charts */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .delay-1 {
+    animation-delay: 0.1s;
+  }
+  
+  .delay-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .delay-3 {
+    animation-delay: 0.3s;
+  }
+  
+  .delay-4 {
+    animation-delay: 0.4s;
+  }
+  
+  /* Badges */
+  .eco-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  
+  .eco-badge.good {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: #15803d;
+  }
+  
+  .eco-badge.average {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: #b45309;
+  }
+  
+  .eco-badge.poor {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #b91c1c;
+  }
+  
+  /* Icon Fallbacks */
+  .icon-fallback {
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.25rem;
+  }
+  
+  /* CSS Variables for Chart Colors */
+  :root {
+    --transport-color: #60a5fa;
+    --home-color: #f59e0bbd;
+    --food-color: #f54c0b;
+  }
+  
+  .chat-msg {
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 80%;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .chat-msg.bot {
+    background-color: #e9f5ff;
+    color: #004d73;
+    align-self: flex-start;
+  }
+  
+  .chat-msg.user {
+    background-color: #dcf8c6;
+    color: #1a1a1a;
+    align-self: flex-end;
+    text-align: right;
+  }
+  
