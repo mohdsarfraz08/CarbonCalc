@@ -98,4 +98,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 # 🌟 Made with ❤️ by Team Code Climbers 🌟
 - Team Members : \
-[Mohd Sarfraz](https://github.com/mohdsarfraz08)
+[Mohd Sarfraz](https://github.com/mohdsarfraz08) [Md Affan Ali](https://github.com/iaffaan) [Dayanand Gupta](https://github.com/Dayanand6528) 
